@@ -25,6 +25,7 @@
             },
             jsonpCallback: jsonpCallBack,
             success: function(data) {
+                console.log(data);
                 return data;
             },
             error: function(error, errorMessage) {

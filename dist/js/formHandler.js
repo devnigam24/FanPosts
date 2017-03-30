@@ -21,6 +21,7 @@
             var inputSearchValue = $(this).serializeArray()[0].value;
             inputSearchValue = inputSearchValue.replace(' ', '_');
             var ajaxUrl = window.CELEB_API_SEARCH_URL + inputSearchValue.substr(0, 1).toLocaleLowerCase() + '/' + inputSearchValue + '.json';
+            console.log(ajaxUrl);
             return callback(ajaxUrl, 'imdb$' + inputSearchValue);
         });
     };

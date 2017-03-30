@@ -17,15 +17,26 @@
 
 
     CelebCards.prototype.addCard = function(celebData) {
-        console.log(celebData);
-        var cardElement = new Card(celebData[0]);
-        this.$element.append(cardElement.$element);
+        this.$element.empty();
+        for (var i = 0; i < celebData.length; i++) {
+            var cardElement = new Card(celebData[i]);
+            this.$element.append(cardElement.$element);
+        }
     };
 
     function Card(celebData) {
+        console.log(celebData);
+        if (celebData.i !== undefined) {
+            var imgPath = celebData.i[0];
+        } else {
+            imgPath = 'images/avatar_man.jpg';
+        }
+
+        var moreInfoDir = 'http://www.imdb.com/name/' + celebData.id + '/bio';
+
         var $divOuter = $('<div></div>', {
             'data-celeb-order': 'card',
-            'class': 'col s12 m6 card'
+            'class': 'col s4 m6 card'
         });
 
         var $divCardImage = $('<div></div>', {
@@ -34,7 +45,7 @@
 
         var $img = $('<img></img', {
             'class': 'activator',
-            'src': celebData.i[0]
+            'src': imgPath
         });
 
         var $divCardContent = $('<div></div>', {
@@ -50,10 +61,13 @@
         });
 
         var $pCardContent = $('<p></p>');
-        var $pCardRevel = $('<p></p>');
+        var $pCardRevel1 = $('<p></p>');
+        var $pCardRevel2 = $('<p></p>');
+        var $pCardRevel3 = $('<p></p>');
 
         var $anchor = $('<a></a>', {
-            'href': '#'
+            'href': moreInfoDir,
+            'target': '_blank'
         });
 
         var $divCardRevel = $('<div></div>', {
@@ -77,10 +91,12 @@
         $divCardImage.append($img);
 
         $divCardContent.append($spanCardTitle);
-        $divCardContent.append($pCardContent.append($anchor.append('This is a link')));
+        $divCardContent.append($pCardContent.append($anchor.append('Read Bio')));
 
         $divCardRevel.append($spanCardRevel);
-        $divCardRevel.append($pCardRevel.append(celebData.s));
+        $divCardRevel.append($pCardRevel1.append(celebData.q));
+        $divCardRevel.append($pCardRevel2.append(celebData.s));
+        $divCardRevel.append($pCardRevel3.append(celebData.y));
 
         $divOuter.append($divCardImage);
         $divOuter.append($divCardContent);
