@@ -19,8 +19,9 @@
         this.$formElement.on('submit', function(event) {
             event.preventDefault();
             var inputSearchValue = $(this).serializeArray()[0].value;
-            var ajaxUrl = window.CELEB_API_SEARCH_URL + inputSearchValue.substr(0, 1) + '/' + inputSearchValue + '.json';
-            callback(ajaxUrl);
+            inputSearchValue = inputSearchValue.replace(' ', '_');
+            var ajaxUrl = window.CELEB_API_SEARCH_URL + inputSearchValue.substr(0, 1).toLocaleLowerCase() + '/' + inputSearchValue + '.json';
+            return callback(ajaxUrl, 'imdb$' + inputSearchValue);
         });
     };
 

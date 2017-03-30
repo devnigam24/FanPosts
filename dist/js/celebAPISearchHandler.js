@@ -4,6 +4,7 @@
     var App = window.App || {};
     var $ = window.jQuery;
 
+
     function ClelebApiStrore(url) {
         if (!url) {
             throw new Error('No remote URL supplied');
@@ -11,21 +12,26 @@
         this.apiUrl = url;
     }
 
-    ClelebApiStrore.prototype.getAll = function(url) {
-        $.ajax({
+    ClelebApiStrore.prototype.getAll = function(url, jsonpCallBack) {
+        return $.ajax({
             url: url,
             type: 'GET',
-            // dataType: 'jsonp',
-            contentType: "json",
+            dataType: 'jsonp',
+            cache: true,
+            jsonp: false,
             crossDomain: true,
-            success: function(serverResponse) {
-                console.log(JSON.stringify(serverResponse));
+            beforeSend: function() {
+                console.log('Ajax Call Started');
             },
-            error: function(error,errorMessage) {
+            jsonpCallback: jsonpCallBack,
+            success: function(data) {
+                return data;
+            },
+            error: function(error, errorMessage) {
                 console.log(error.statusText + ' : ' + error.status + ' : ' + errorMessage);
             }
         }).done(function() {
-            console.log("ajax call over successfully");
+            console.log("Ajax Call over successfully");
         });
     };
 
