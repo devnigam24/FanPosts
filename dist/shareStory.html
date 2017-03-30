@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Starter Template - Materialize</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+      <div class="nav-wrapper container col s12">
+          <a href="#" class="brand-logo">Logo</a>
+          <form class="col s4 right hide-on-med-and-down" data-celeb-search="form">
+              <div class="input-field ">
+                  <input id="celebSearch" name="celebSearch" placeholder="Search Your Celebrity" type="search" required pattern="[a-zA-Z\s]+">
+                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                  <i class="material-icons">close</i>
+              </div>
+          </form>
+
+          <ul id="nav-mobile" class="side-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shareStory.html">Share Story</a></li>
+              <li>
+                  <a class="row">
+                      <input class="col s10" id="celebSearch" name="celebSearch" placeholder="Search Your Celebrity" type="search" required pattern="[a-zA-Z\s]+">
+                      <label class="label-icon right" for="search"><i class="material-icons">search</i></label>
+                  </a>
+              </li>
+          </ul>
+
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shareStory.html">Share Story</a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+  </nav>
+
+    <div class="container">
+        <div class="section">
+
+            <div class="row">
+                <form class="col s12" data-story="form">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label for="firstName" class="mat-label">First Name</label>
+                            <input type="text" class="mat-input" name="firstName" id="firstName" autofocus required>
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="lastName" class="mat-label">Last Name</label>
+                            <input type="text" class="mat-input" name="lastName" id="lastName" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" name="emailAddress" type="email" class="validate" placeholder="abc@who.com" required>
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="location" class="mat-label">Location</label>
+                            <input type="text" name="location" class="mat-input" id="locationName" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="celebrityName" class="mat-label">Celebrity Name</label>
+                            <input type="text" name="celebrityName" class="mat-input" id="celebrityName" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="textarea">Description</label>
+                            <textarea id="textarea" name="description" class="materialize-textarea" required></textarea>
+                        </div>
+                    </div>
+                    <div class="file-field input-field">
+                        <div class="btn">
+                            <span>Image Upload</span>
+                            <input name="celebImage" type="file" id="celebImage">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br><br>
+    </div>
+
+    <footer class="page-footer orange">
+        <div class="container">
+        </div>
+    </footer>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/validation.js" charset="utf-8"></script>
+    <script src="js/remotedatastore.js" charset="utf-8"></script>
+    <script src="js/formhandler.js" charset="utf-8"></script>
+    <script src="js/story.js" charset="utf-8"></script>
+    <script src="js/celebAPISearchHandler.js"></script>
+    <script src="js/celebsCards.js"></script>
+    <script src="js/main.js"></script>
+    <!-- <script src="js/signUpLogin.js"></script> -->
+    <script src="js/init.js"></script>
+    <!-- <script src="js/horizon.js"></script> -->
+</body>
+
+</html>

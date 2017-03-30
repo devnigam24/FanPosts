@@ -1,0 +1,41 @@
+{
+  "stories": [
+    {
+      "firstName": "neha",
+      "lastName": "Tambe",
+      "emailAddress": "nehatambe@gmail.com",
+      "location": "Fullerton",
+      "celebrityName": "Hugh Jackman",
+      "description": "Awesome Experience",
+      "id": 1
+    },
+    {
+      "firstName": "neha",
+      "lastName": "tambe",
+      "emailAddress": "test@gmail.com",
+      "location": "Fullerton",
+      "celebrityName": "Hugh Jackman",
+      "description": "Awesommee",
+      "image": "TitanServicev1.jpg",
+      "id": 2
+    },
+    {
+      "firstName": "test",
+      "lastName": "test",
+      "emailAddress": "test@bignerdranch.com",
+      "location": "Irvine",
+      "celebrityName": "Hugh Jackman",
+      "description": "tetstt",
+      "id": 3
+    },
+    {
+      "firstName": "neha",
+      "lastName": "tambe",
+      "emailAddress": "neha@gmail.com",
+      "location": "Fullerton",
+      "celebrityName": "Hugh Jackman",
+      "description": "Awesomee",
+      "id": 4
+    }
+  ]
+}

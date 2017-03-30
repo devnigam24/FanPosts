@@ -14,8 +14,9 @@
 
 <body>
     <nav class="light-blue lighten-1" role="navigation">
-        <div class="nav-wrapper container">
-            <form data-celeb-search="form">
+        <div class="nav-wrapper container col s12">
+            <a href="#" class="brand-logo">Logo</a>
+            <form class="col s4 right hide-on-med-and-down" data-celeb-search="form">
                 <div class="input-field ">
                     <input id="celebSearch" name="celebSearch" placeholder="Search Your Celebrity" type="search" required pattern="[a-zA-Z\s]+">
                     <label class="label-icon" for="search"><i class="material-icons">search</i></label>
@@ -24,7 +25,19 @@
             </form>
 
             <ul id="nav-mobile" class="side-nav">
-                <li><a href="#">Navbar Link</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shareStory.html">Share Story</a></li>
+                <li>
+                    <a class="row">
+                        <input class="col s10" id="celebSearch" name="celebSearch" placeholder="Search Your Celebrity" type="search" required pattern="[a-zA-Z\s]+">
+                        <label class="label-icon right" for="search"><i class="material-icons">search</i></label>
+                    </a>
+                </li>
+            </ul>
+
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shareStory.html">Share Story</a></li>
             </ul>
             <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         </div>
@@ -93,10 +106,13 @@
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
     <script src="js/materialize.js"></script>
-    <script src="js/formHandler.js"></script>
+    <script src="js/validation.js" charset="utf-8"></script>
+    <script src="js/remotedatastore.js" charset="utf-8"></script>
+    <script src="js/formhandler.js" charset="utf-8"></script>
+    <script src="js/story.js" charset="utf-8"></script>
     <script src="js/celebAPISearchHandler.js"></script>
     <script src="js/celebsCards.js"></script>
-    <script src="js/mainApp.js"></script>
+    <script src="js/main.js"></script>
     <!-- <script src="js/signUpLogin.js"></script> -->
     <script src="js/init.js"></script>
     <!-- <script src="js/horizon.js"></script> -->
