@@ -7,11 +7,11 @@
     function CelebCards(selector) {
         if (!selector) {
             throw new Error('No selector provided');
+        } else {
+            this.$element = $(selector);
         }
-
-        this.$element = $(selector);
         if (this.$element.length === 0) {
-            throw new Error('Could not find element with selector: ' + selector);
+            //throw new Error('Could not find element with selector: ' + selector);
         }
     }
 

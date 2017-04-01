@@ -6,16 +6,18 @@
     function FormHandler(selector) {
         if (!selector) {
             throw new Error('No selector provided');
+        } else {
+            this.$element = $(selector);
         }
-        this.$formElement = $(selector);
-        if (this.$formElement.length === 0) {
-            throw new Error('Could not find element with selector: ' + selector);
+
+        if (this.$element.length === 0) {
+            //throw new Error('Could not find element with selector: ' + selector);
         }
     }
 
     FormHandler.prototype.addInputHandler = function(fn) {
         console.log('Setting input handler for form');
-        this.$formElement.on('input', '[name="emailAddress"]', function(event) {
+        this.$element.on('input', '[name="emailAddress"]', function(event) {
             var emailAddress = event.target.value;
             var message = '';
             if (fn(emailAddress)) {
@@ -29,31 +31,36 @@
     };
 
     FormHandler.prototype.addSubmitHandler = function(fn) {
-        this.$formElement.on('submit', function(event) {
+        this.$element.on('submit', function(event) {
             event.preventDefault();
 
-            var inputSearchValue = $(this).serializeArray()[0].value;
-            inputSearchValue = inputSearchValue.replace(' ', '_');
-            var ajaxUrl = window.CELEB_API_SEARCH_URL + inputSearchValue.substr(0, 1).toLocaleLowerCase() + '/' + inputSearchValue + '.json';
-            console.log(ajaxUrl);
-            return fn(ajaxUrl, 'imdb$' + inputSearchValue);
+            if (this.name === 'celebSearch') {
+                var inputSearchValue = $(this).serializeArray()[0].value;
+                inputSearchValue = inputSearchValue.replace(' ', '_');
+                var ajaxUrl = window.CELEB_API_SEARCH_URL + inputSearchValue.substr(0, 1).toLocaleLowerCase() + '/' + inputSearchValue + '.json';
+                console.log(ajaxUrl);
+                fn(ajaxUrl, 'imdb$' + inputSearchValue).then(function() {
+                    this.reset();
+                    this.elements[0].focus();
+                }.bind(this));
+            }
 
-
-            var data = {};
-            $(this).serializeArray().forEach(function(element) {
-                data[element.name] = element.value;
-                console.log(element.name);
-            });
-            var file = document.querySelector('input[type=file]').files[0];
-            console.log(file);
-            var convertedFile = getBase64Image(file);
-            console.log(convertedFile);
-            fn(data).then(function() {
-                this.reset();
-                this.elements[0].focus();
-            }.bind(this));
-
-
+            if (this.name === 'storyForm') {
+                var data = {};
+                $(this).serializeArray().forEach(function(element) {
+                    data[element.name] = element.value;
+                    console.log(element.name);
+                });
+                var file = document.querySelector('input[type=file]').files[0];
+                console.log(file);
+                if (file != undefined)
+                    var convertedFile = getBase64Image(file);
+                console.log(convertedFile);
+                fn(data).then(function() {
+                    this.reset();
+                    this.elements[0].focus();
+                }.bind(this));
+            }
         });
     };
 
