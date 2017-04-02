@@ -25,7 +25,6 @@
     };
 
     function Card(celebData) {
-        console.log(celebData);
         if (celebData.i !== undefined) {
             var imgPath = celebData.i[0];
         } else {

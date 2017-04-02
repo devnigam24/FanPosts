@@ -5,12 +5,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
     <title>Starter Template - Materialize</title>
-
-    <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -46,87 +43,15 @@
         </div>
     </nav>
 
-
-
-
-    <!--==============Content Area=================-->
     <div class="bokeliebiao">
         <h2 class="header center orange-text">Blogger Zone</h2>
     </div>
+
     <div class="container">
-
-        <!--</div>-->
-
-        <img src="images/blog.jpg" alt="blog img">
-        <h3 class="title orange-text">Latest Blog </h3>
-        <div class="col s12 m7">
-            <h2 class="header"></h2>
-            <div class="card horizontal small">
-                <div class="card-image">
-                    <img src="http://lorempixel.com/100/190/nature/6" alt="Image" style="width:304px;height:228px;">
-                </div>
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.</p>
-                    </div>
-                    <div class="card-action">
-                        <a class="orange-text text-lighten-3">Posted By</a>
-
-                        <i class=" right material-icons">thumb_down</i>
-                        <i class=" right material-icons">thumb_up</i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <div class="col s12 m7">
-            <h2 class="header"></h2>
-            <div class="card horizontal small">
-                <div class="card-image">
-                    <img src="http://lorempixel.com/100/190/nature/6" alt="Image" style="width:304px;height:228px;">
-                </div>
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.</p>
-                    </div>
-                    <div class="card-action">
-                        <a class="orange-text text-lighten-3">Posted By</a>
-
-                        <i class=" right material-icons">thumb_down</i>
-                        <i class=" right material-icons">thumb_up</i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col s12 m7">
-            <h2 class="header"></h2>
-            <div class="card horizontal small">
-                <div class="card-image">
-                    <img src="http://lorempixel.com/100/190/nature/6" alt="Image" style="width:304px;height:228px;">
-                </div>
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.</p>
-                    </div>
-                    <div class="card-action">
-                        <a class="orange-text text-lighten-3">Posted By</a>
-
-                        <i class=" right material-icons">thumb_down</i>
-                        <i class=" right material-icons">thumb_up</i>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="col s12 m7" data-story-order="card"></div>
     </div>
 
     <footer class="page-footer orange">
-        <div class="container">
-
-        </div>
         <div class="footer-copyright">
             <div class="container">
                 Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
@@ -143,10 +68,13 @@
     <script src="js/celebAPISearchHandler.js"></script>
     <script src="js/celebsCards.js"></script>
     <script src="js/main.js"></script>
-    <!-- <script src="js/signUpLogin.js"></script> -->
-    <script src="js/init.js"></script>
-    <!-- <script src="js/horizon.js"></script> -->
-
+    <script type="text/javascript">
+        var myStory = window.myStory;
+        var selector = document.querySelector('[data-story-order="card"]');
+        myStory.fetchAllStories(function(objectData) {
+            myStory.postAllStories(selector, objectData);
+        });
+    </script>
 </body>
 
 </html>

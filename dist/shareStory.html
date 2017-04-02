@@ -14,37 +14,37 @@
 </head>
 
 <body>
-  <nav class="light-blue lighten-1" role="navigation">
-      <div class="nav-wrapper container col s12">
-          <a href="#" class="brand-logo">Logo</a>
-          <form class="col s4 right hide-on-med-and-down" name="celebSearch" data-celeb-search="form">
-              <div class="input-field ">
-                  <input id="celebSearch" name="celebSearch" placeholder="Search Your Celebrity" type="search" required pattern="[a-zA-Z\s]+">
-                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                  <i class="material-icons">close</i>
-              </div>
-          </form>
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container col s12">
+            <a href="#" class="brand-logo">Logo</a>
+            <form class="col s4 right hide-on-med-and-down" name="celebSearch" data-celeb-search="form">
+                <div class="input-field ">
+                    <input id="celebSearch" name="celebSearch" placeholder="Search Your Celebrity" type="search" required pattern="[a-zA-Z\s]+">
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
+            </form>
 
-          <ul id="nav-mobile" class="side-nav">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="shareStory.html">Share Story</a></li>
-              <li><a href="allStories.html">All Stories</a></li>
-              <li>
-                  <a class="row">
-                      <input class="col s10" id="celebSearch" name="celebSearch" placeholder="Search Your Celebrity" type="search" required pattern="[a-zA-Z\s]+">
-                      <label class="label-icon right" for="search"><i class="material-icons">search</i></label>
-                  </a>
-              </li>
-          </ul>
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shareStory.html">Share Story</a></li>
+                <li><a href="allStories.html">All Stories</a></li>
+                <li>
+                    <a class="row">
+                        <input class="col s10" id="celebSearch" name="celebSearch" placeholder="Search Your Celebrity" type="search" required pattern="[a-zA-Z\s]+">
+                        <label class="label-icon right" for="search"><i class="material-icons">search</i></label>
+                    </a>
+                </li>
+            </ul>
 
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="shareStory.html">Share Story</a></li>
-              <li><a href="allStories.html">All Stories</a></li>
-          </ul>
-          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-      </div>
-  </nav>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shareStory.html">Share Story</a></li>
+                <li><a href="allStories.html">All Stories</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
 
     <div class="container">
         <div class="section">
@@ -109,14 +109,17 @@
     </div>
 
     <footer class="page-footer orange">
-        <div class="container">
+        <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            </div>
         </div>
     </footer>
 
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyGSYGWRnavbCTiEseGgLrv8CzyDywAN0&libraries=places"></script>
-	  <script src="//widget.cloudinary.com/global/all.js" charset="utf-8"></script>
+    <script src="//widget.cloudinary.com/global/all.js" charset="utf-8"></script>
     <script src="js/materialize.js"></script>
     <script src="js/validation.js" charset="utf-8"></script>
     <script src="js/remotedatastore.js" charset="utf-8"></script>
@@ -126,9 +129,6 @@
     <script src="js/celebsCards.js"></script>
     <script src="js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
-    <!-- <script src="js/signUpLogin.js"></script> -->
-    <script src="js/init.js"></script>
-    <!-- <script src="js/horizon.js"></script> -->
     <script type="text/javascript">
       new google.maps.places.Autocomplete(document.getElementById('autocomplete'));
       //$('#storyDate').val(moment().format());
@@ -136,7 +136,6 @@
         document.getElementById("storyDate").value = moment().format();
       }
     </script>
-
 </body>
 
 </html>

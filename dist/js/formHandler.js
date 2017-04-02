@@ -17,7 +17,6 @@
     }
 
     FormHandler.prototype.addInputHandler = function(fn) {
-        console.log('Setting input handler for form');
         this.$element.on('input', '[name="emailAddress"]', function(event) {
             var emailAddress = event.target.value;
             var message = '';
@@ -32,17 +31,17 @@
     FormHandler.prototype.addClickHandler = function() {
         this.$element.on('click', '[name="celebImage"]', function() {
             cloudinary.openUploadWidget({
-                    cloud_name: 'cpsc473',
-                    upload_preset: 'nmqrcew6',
-                    theme: 'minimal'
-                },
-                function(error, result) {
-                    if (null != result || undefined != result) {
-                        window.thumbnailUrl = result[0].thumbnail_url;
-                        $('#imgPreview').attr('src', result[0].thumbnail_url);
-                    }
+                cloud_name: 'cpsc473',
+                upload_preset: 'nmqrcew6',
+                theme: 'minimal'
+            },
+            function(error, result) {
+                if (null != result || undefined != result) {
+                    window.thumbnailUrl = result[0].thumbnail_url;
+                    $('#imgPreview').attr('src', result[0].thumbnail_url);
+                }
 
-                });
+            });
         });
     };
 
@@ -65,13 +64,9 @@
                 var data = {};
                 $(this).serializeArray().forEach(function(element) {
                     data[element.name] = element.value;
-                    console.log(element.name);
                 });
-                var file = document.querySelector('input[type=file]').files[0];
-                console.log(file);
-                if (file != undefined)
-                    var convertedFile = getBase64Image(file);
-                console.log(convertedFile);
+                data.PostedSnapURL = window.thumbnailUrl;
+                window.thumbnailUrl = null;
                 fn(data).then(function() {
                     this.reset();
                     this.elements[0].focus();
@@ -79,17 +74,6 @@
             }
         });
     };
-
-    function getBase64Image(imgElem) {
-        // imgElem must be on the same server otherwise a cross-origin error will be thrown 'SECURITY_ERR: DOM Exception 18'
-        var canvas = document.createElement('canvas');
-        canvas.width = 100;
-        canvas.height = 100;
-        var ctx = canvas.getContext('2d');
-        ctx.drawImage(imgElem, 0, 0);
-        var dataURL = canvas.toDataURL('image/jpeg');
-        return dataURL.replace(/^data:image\/(png|jpg);base64,/, '');
-    }
 
     App.FormHandler = FormHandler;
     window.App = App;

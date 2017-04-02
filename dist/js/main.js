@@ -1,5 +1,6 @@
 (function(window) {
     'use strict';
+    var $ = window.jQuery;
 
     var App = window.App;
     var FormHandler = App.FormHandler;
@@ -12,10 +13,10 @@
     var CELEB_CARD_SELECTOR = '[data-coffee-order="checklist"]';
     var CELEB_SEARCH_FORM_SELECTOR = '[data-celeb-search="form"]';
     var STORY_FORM_SELECTOR = '[data-story="form"]';
+    var SIDE_NAV_BUTTON_SELECTOR = '[class="button-collapse"]';
     var SERVER_URL = 'http://localhost:3009/stories';
     window.CELEB_API_SEARCH_URL = 'https://sg.media-imdb.com/suggests/';
 
-    //var horizon = Horizon();
     var remoteDS = new RemoteDataStore(SERVER_URL);
     var myStory = new Story(remoteDS);
     var celebritySearchFormHandler = new FormHandler(CELEB_SEARCH_FORM_SELECTOR);
@@ -35,9 +36,7 @@
         return myStory.createStory(data);
     });
 
-
     storyFormHandler.addInputHandler(Validation.isValidEmail);
     storyFormHandler.addClickHandler();
-	//horizon.connect();
-    //const chat = horizon("messages");
+    $(document.querySelector(SIDE_NAV_BUTTON_SELECTOR)).sideNav();
 })(window);

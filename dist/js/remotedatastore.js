@@ -10,10 +10,13 @@
         this.serverUrl = url;
     }
     RemoteDataStore.prototype.add = function(val) {
-        return $.post(this.serverUrl, val, function(serverResponse) {
-            console.log(serverResponse);
-        });
+        return $.post(this.serverUrl, val);
     };
+
+    RemoteDataStore.prototype.getAll = function() {
+        return $.get(this.serverUrl);
+    };
+
     App.RemoteDataStore = RemoteDataStore;
     window.App = App;
 })(window);
