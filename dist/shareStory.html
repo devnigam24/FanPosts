@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/minimal.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
 <body>
@@ -84,13 +85,17 @@
                             <textarea id="textarea" name="description" class="materialize-textarea" required></textarea>
                         </div>
                     </div>
+                    <input type="text" name="storyLike" value="0" hidden="true" class="mat-input">
+                    <input type="text" name="storyDislike" value="0" hidden="true" class="mat-input">
+                    <input type="text" name="postDate" id="storyDate" hidden="true" class="mat-input">
                     <div class="file-field input-field">
                         <div class="btn">
-                            <span>Image Upload</span>
-                            <input name="celebImage" type="file" id="celebImage">
+                            <a href="#" id="celebImage" name="celebImage"><span>Image Upload</span></a>
                         </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <img height="150" width="200" id="imgPreview" alt="Image preview">
                         </div>
                     </div>
                     <div class="row">
@@ -111,6 +116,7 @@
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyGSYGWRnavbCTiEseGgLrv8CzyDywAN0&libraries=places"></script>
+	  <script src="//widget.cloudinary.com/global/all.js" charset="utf-8"></script>
     <script src="js/materialize.js"></script>
     <script src="js/validation.js" charset="utf-8"></script>
     <script src="js/remotedatastore.js" charset="utf-8"></script>
@@ -119,12 +125,18 @@
     <script src="js/celebAPISearchHandler.js"></script>
     <script src="js/celebsCards.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
     <!-- <script src="js/signUpLogin.js"></script> -->
     <script src="js/init.js"></script>
     <!-- <script src="js/horizon.js"></script> -->
     <script type="text/javascript">
-        new google.maps.places.Autocomplete(document.getElementById('autocomplete'));
+      new google.maps.places.Autocomplete(document.getElementById('autocomplete'));
+      //$('#storyDate').val(moment().format());
+       window.onload = function() {
+        document.getElementById("storyDate").value = moment().format();
+      }
     </script>
+
 </body>
 
 </html>

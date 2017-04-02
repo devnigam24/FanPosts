@@ -2,6 +2,7 @@
     'use strict';
     var App = window.App || {};
     var $ = window.jQuery;
+    var cloudinary = window.cloudinary;
 
     function FormHandler(selector) {
         if (!selector) {
@@ -26,7 +27,22 @@
                 message = emailAddress + ' is not an authorized email address!';
                 event.target.setCustomValidity(message);
             }
+        });
+    };
+    FormHandler.prototype.addClickHandler = function() {
+        this.$element.on('click', '[name="celebImage"]', function() {
+            cloudinary.openUploadWidget({
+                    cloud_name: 'cpsc473',
+                    upload_preset: 'nmqrcew6',
+                    theme: 'minimal'
+                },
+                function(error, result) {
+                    if (null != result || undefined != result) {
+                        window.thumbnailUrl = result[0].thumbnail_url;
+                        $('#imgPreview').attr('src', result[0].thumbnail_url);
+                    }
 
+                });
         });
     };
 

@@ -13,7 +13,9 @@
 	font-size: inherit;
 }
 .height25{
-  height: 25em;
+  height: 27em !important;
+  width: 29% !important;
+  margin: 2em;
 }
 
 
@@ -34,4 +36,3 @@
 form :focus:required:invalid {
     border-color: #a94442;
 }
-

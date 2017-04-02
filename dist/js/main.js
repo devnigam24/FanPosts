@@ -37,6 +37,7 @@
 
 
     storyFormHandler.addInputHandler(Validation.isValidEmail);
-    //horizon.connect();
+    storyFormHandler.addClickHandler();
+	//horizon.connect();
     //const chat = horizon("messages");
 })(window);
