@@ -40,7 +40,6 @@
                     window.thumbnailUrl = result[0].thumbnail_url;
                     $('#imgPreview').attr('src', result[0].thumbnail_url);
                 }
-
             });
         });
     };

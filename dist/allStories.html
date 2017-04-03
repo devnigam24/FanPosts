@@ -70,9 +70,41 @@
     <script src="js/main.js"></script>
     <script type="text/javascript">
         var myStory = window.myStory;
+        var remoteDS = window.remoteDS;
         var selector = document.querySelector('[data-story-order="card"]');
         myStory.fetchAllStories(function(objectData) {
             myStory.postAllStories(selector, objectData);
+        }).then(function() {
+            document.querySelectorAll('[data-like-up="click"]').forEach(function(oneIcon) {
+                $(oneIcon).on('click', function(event) {
+                    Materialize.toast('Liked', 2000);
+                    remoteDS.get(oneIcon.getAttribute('documentid')).then(function(serverRes) {
+                        if (serverRes) {
+                            serverRes.storyLike = (Number(serverRes.storyLike) + 1).toString();
+                            remoteDS.remove(oneIcon.getAttribute('documentid')).then(function(){
+                              remoteDS.add(serverRes).then(function(){
+                                location.reload();
+                              });
+                            });
+                        }
+                    });
+                });
+            });
+            document.querySelectorAll('[data-unlike-up="click"]').forEach(function(oneIcon) {
+                $(oneIcon).on('click', function(event) {
+                  Materialize.toast('Un Liked', 2000);
+                  remoteDS.get(oneIcon.getAttribute('documentid')).then(function(serverRes) {
+                      if (serverRes) {
+                          serverRes.storyDislike = (Number(serverRes.storyDislike) + 1).toString();
+                          remoteDS.remove(oneIcon.getAttribute('documentid')).then(function(){
+                            remoteDS.add(serverRes).then(function(){
+                              location.reload();
+                            });
+                          });
+                      }
+                  });
+                });
+            });
         });
     </script>
 </body>

@@ -17,6 +17,16 @@
         return $.get(this.serverUrl);
     };
 
+    RemoteDataStore.prototype.get = function(key) {
+        return $.get(this.serverUrl + '/' + key);
+    };
+
+    RemoteDataStore.prototype.remove = function(key) {
+        return $.ajax(this.serverUrl + '/' + key, {
+            type: 'DELETE'
+        });
+    };
+
     App.RemoteDataStore = RemoteDataStore;
     window.App = App;
 })(window);

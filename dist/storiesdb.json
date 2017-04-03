@@ -1,43 +1,16 @@
 {
   "stories": [
     {
-      "firstName": "dev",
-      "lastName": "ni",
-      "emailAddress": "dev244@bignerdranch.com",
-      "location": "Nutwood Avenue, Fullerton, CA, United States",
-      "celebrityName": "jhjk",
-      "description": "jkjk",
-      "storyLike": "56",
-      "storyDislike": "3",
-      "postDate": "2017-04-02T14:19:23-07:00",
-      "PostedSnapURL": "http://res.cloudinary.com/cpsc473/image/upload/c_limit,h_60,w_90/v1491167987/xwcyn6a5l0khnycp7hz7.jpg",
-      "id": 11
-    },
-    {
-      "firstName": "dev",
-      "lastName": "ni",
-      "emailAddress": "dev244@bignerdranch.com",
-      "location": "Nutwood Avenue, Fullerton, CA, United States",
-      "celebrityName": "jhjk",
-      "description": "jkjk",
-      "storyLike": "56",
-      "storyDislike": "3",
-      "postDate": "2017-04-02T14:19:23-07:00",
-      "PostedSnapURL": "http://res.cloudinary.com/cpsc473/image/upload/c_limit,h_60,w_90/v1491167987/xwcyn6a5l0khnycp7hz7.jpg",
-      "id": 11
-    },
-    {
-      "firstName": "dev",
-      "lastName": "ni",
-      "emailAddress": "dev244@bignerdranch.com",
-      "location": "Nutwood Avenue, Fullerton, CA, United States",
-      "celebrityName": "jhjk",
-      "description": "jkjk",
-      "storyLike": "56",
-      "storyDislike": "3",
-      "postDate": "2017-04-02T14:19:23-07:00",
-      "PostedSnapURL": "http://res.cloudinary.com/cpsc473/image/upload/c_limit,h_60,w_90/v1491167987/xwcyn6a5l0khnycp7hz7.jpg",
-      "id": 11
+      "firstName": "hh",
+      "lastName": "h",
+      "emailAddress": "h@h.com",
+      "location": "h",
+      "celebrityName": "h",
+      "description": "h",
+      "storyLike": "3",
+      "storyDislike": "2",
+      "postDate": "2017-04-02T19:03:20-07:00",
+      "id": "1"
     }
   ]
 }

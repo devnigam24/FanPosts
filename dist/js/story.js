@@ -13,14 +13,13 @@
 
     Story.prototype.fetchAllStories = function(fn) {
         return this.db.getAll().then(function(allStories) {
-            console.log(allStories);
-            fn(allStories);
+            fn(allStories.reverse());
         });
     };
 
     Story.prototype.postAllStories = function(selector, allStories) {
         allStories.forEach(function(oneStory) {
-            $(selector).append(storyCard(oneStory));
+            $(selector).append(storyCard(oneStory))
         });
 
     };
@@ -48,9 +47,9 @@
             'class': 'card-content'
         });
 
-        var $cardCelebrity = $('<h5><h5>');
+        var $cardCelebrity = $('<h5></h5>');
 
-        var $cardDisc = $('<h5><h5>');
+        var $cardDisc = $('<p></p>');
 
         var $breakTag = $('<br></br>');
 
@@ -75,11 +74,15 @@
         var $anchorIconDown = $('<a></a>');
 
         var $unlikeIcon = $('<i></i>', {
-            'class': 'right material-icons'
+            'class': 'right material-icons',
+            'data-unlike-up': 'click',
+            'documentId' : data.id
         });
 
         var $likeIcon = $('<i></i>', {
-            'class': 'right material-icons'
+            'class': 'right material-icons',
+            'data-like-up': 'click',
+            'documentId' : data.id
         });
 
         var $likeSpan = $('<span></span>', {
@@ -107,6 +110,7 @@
         $pCardLocation.append(data.location);
         $pCardDate.append(data.postDate);
 
+        $divCardContent.append($cardCelebrity);
         $divCardContent.append($cardDisc);
         $divCardContent.append($breakTag);
         $divCardContent.append($pCardFirstName);

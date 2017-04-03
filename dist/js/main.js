@@ -24,6 +24,7 @@
     var celebCards = new CelebCards(CELEB_CARD_SELECTOR);
 
     window.myStory = myStory;
+    window.remoteDS = remoteDS;
 
     celebritySearchFormHandler.addSubmitHandler(function(data, callback) {
         var celebJson = new ClelebApiStrore(data);
@@ -33,7 +34,9 @@
     });
 
     storyFormHandler.addSubmitHandler(function(data) {
-        return myStory.createStory(data);
+        return myStory.createStory(data).done(function() {
+            window.location = 'allStories.html';
+        });
     });
 
     storyFormHandler.addInputHandler(Validation.isValidEmail);
