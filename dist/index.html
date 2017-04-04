@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-    <title>Starter Template - Materialize</title>
-
+    <title>FANHUB</title>
+    <link rel="icon" href="favi.ico">
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
@@ -15,7 +15,7 @@
 <body>
     <nav class="light-blue lighten-1" role="navigation">
         <div class="nav-wrapper container col s12">
-            <a href="#" class="brand-logo">Logo</a>
+            <a href="index.html" class="brand-logo"><img src="images/logo.png" width="90" height="60"></a>
             <form class="col s4 right hide-on-med-and-down" name="celebSearch" data-celeb-search="form">
                 <div class="input-field ">
                     <input id="celebSearch" name="celebSearch" placeholder="Search Your Celebrity" type="search" required pattern="[a-zA-Z\s]+">
@@ -30,15 +30,15 @@
                 <li><a href="allStories.html">All Stories</a></li>
                 <li>
                     <form class="col s4 right hide-on-med-and-down" name="celebSearch" data-celeb-search="form">
-                    <a class="row">
-                        <input class="col s10" id="celebSearch" name="celebSearch" placeholder="Search Your Celebrity" type="search" required pattern="[a-zA-Z\s]+">
-                        <label class="label-icon right" for="search"><i class="material-icons">search</i></label>
-                    </a>
+                        <a class="row">
+                            <input class="col s10" id="celebSearch" name="celebSearch" placeholder="Search Your Celebrity" type="search" required pattern="[a-zA-Z\s]+">
+                            <label class="label-icon right" for="search"><i class="material-icons">search</i></label>
+                        </a>
                     </form>
                 </li>
             </ul>
 
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <ul id="nav-mobile" class="storyHeader right hide-on-med-and-down">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="shareStory.html">Share Story</a></li>
                 <li><a href="allStories.html">All Stories</a></li>
@@ -46,21 +46,55 @@
             <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         </div>
     </nav>
-    <div class="section no-pad-bot" id="index-banner">
-        <div class="container">
-            <br><br>
-            <h1 class="header center orange-text">Post You Encounter</h1>
-            <div class="row center">
-                <h5 class="header col s12 light">Fans can share stories of encounters with their favorite celebrities</h5>
-            </div>
-            <div class="row center">
-                <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
-            </div>
-            <br><br>
 
+    <div class="parallax-container">
+        <div class="parallax"><img src="images/pic1.jpg"></div>
+    </div>
+    <div class="section white">
+        <div class="row container">
+            <div class="section no-pad-bot" id="index-banner">
+                <div class="container">
+                    <br><br>
+                    <h1 class="header center orange-text">Post Your Encounter</h1>
+                    <div class="row center">
+                        <h4 class="header col s12 light">Share Stories of favorite Celebrities</h4>
+                    </div>
+                    <div class="row center">
+                        <a href="shareStory.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+                    </div>
+                    <br><br>
+
+                </div>
+            </div>
         </div>
     </div>
+    <div id='paralexDiv'>
+        <div class="parallax-container">
+            <div class="parallax"><img src="images/pic2.jpg"></div>
+        </div>
 
+        <div class="section white">
+            <div class="row container">
+                <div class="section no-pad-bot" id="index-banner">
+                    <div class="container">
+                        <br><br>
+                        <h1 class="header center orange-text">Have you met a Celeb?</h1>
+                        <div class="row center">
+                            <h4 class="header col s12 light">Do you have a story?</h4>
+                        </div>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="parallax-container">
+            <div class="parallax"><img src="images/pic6.jpg"></div>
+        </div>
+
+
+        <div class="section"></div>
+    </div>
 
     <div class="container">
         <div class="section">
@@ -78,14 +112,13 @@
             </div>
         </div>
         <br><br>
-
-        <div class="section"></div>
     </div>
 
     <footer class="page-footer orange">
         <div class="footer-copyright">
             <div class="container">
-                Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+                Made by <a class="orange-text text-lighten-3">Dev Anjali Chinmay Neha</a>
+
             </div>
         </div>
     </footer>

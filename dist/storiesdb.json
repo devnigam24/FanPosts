@@ -1,16 +1,43 @@
 {
   "stories": [
     {
-      "firstName": "hh",
-      "lastName": "h",
-      "emailAddress": "h@h.com",
-      "location": "h",
-      "celebrityName": "h",
-      "description": "h",
+      "firstName": "Anjali",
+      "lastName": "Mutha",
+      "emailAddress": "anjalimutha10@gmail.com",
+      "location": "215 South Harbor Boulevard, Anaheim, CA, United States",
+      "celebrityName": "shah",
+      "description": "cool",
+      "storyLike": "1",
+      "storyDislike": "1",
+      "postDate": "2017-04-03T15:30:05-07:00",
+      "PostedSnapURL": "http://res.cloudinary.com/cpsc473/image/upload/c_limit,h_60,w_90/v1491258628/lhbinz92np28aohrutm5.jpg",
+      "id": "rJrQTBl6g"
+    },
+    {
+      "firstName": "chinmay",
+      "lastName": "moharir",
+      "emailAddress": "chinmay.moharir@gmail.com",
+      "location": "2435 Imperial Highway, Brea, CA, United States",
+      "celebrityName": "asknak",
+      "description": "hi",
       "storyLike": "3",
-      "storyDislike": "2",
-      "postDate": "2017-04-02T19:03:20-07:00",
-      "id": "1"
+      "storyDislike": "0",
+      "postDate": "2017-04-03T16:18:28-08:00",
+      "PostedSnapURL": "http://res.cloudinary.com/cpsc473/image/upload/c_limit,h_60,w_90/v1491261532/uszy7bekofyeqzppgp6g.jpg",
+      "id": "r1xtLPx6l"
+    },
+    {
+      "firstName": "PROF",
+      "lastName": "AERY",
+      "emailAddress": "A@G.COM",
+      "location": "2435 Imperial Highway, Brea, CA, United States",
+      "celebrityName": "sALMAN",
+      "description": "COOOOOLLLLL",
+      "storyLike": "2",
+      "storyDislike": "1",
+      "postDate": "2017-04-03T16:42:09-08:00",
+      "PostedSnapURL": "http://res.cloudinary.com/cpsc473/image/upload/c_limit,h_60,w_90/v1491263017/vf9zqbkmcplgcth35fnz.jpg",
+      "id": "BkxIhweax"
     }
   ]
 }

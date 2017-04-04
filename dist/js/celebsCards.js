@@ -22,6 +22,7 @@
             var cardElement = new Card(celebData[i]);
             this.$element.append(cardElement.$element);
         }
+        $('#paralexDiv').hide();
     };
 
     function Card(celebData) {
@@ -35,7 +36,7 @@
 
         var $divOuter = $('<div></div>', {
             'data-celeb-order': 'card',
-            'class': 'col s4 m6 card'
+            'class': 'card col s3 margin1 height25'
         });
 
         var $divCardImage = $('<div></div>', {
@@ -43,7 +44,7 @@
         });
 
         var $img = $('<img></img', {
-            'class': 'activator',
+            'class': 'activator cardImgHeight',
             'src': imgPath
         });
 

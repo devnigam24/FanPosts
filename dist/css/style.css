@@ -10,12 +10,15 @@
   padding: 0 15px;
 }
 .icon-block .material-icons {
-	font-size: inherit;
+    font-size: inherit;
 }
 .height25{
-  height: 27em !important;
+  height: 35em !important;
   width: 29% !important;
   margin: 2em;
+}
+.cardImgHeight{
+  height: 25em !important;
 }
 
 
@@ -35,4 +38,8 @@
 }
 form :focus:required:invalid {
     border-color: #a94442;
+}
+
+#celebImage {
+    color: white;
 }
