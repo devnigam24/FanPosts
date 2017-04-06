@@ -2,6 +2,7 @@
     'use strict';
     var App = window.App || {};
     var $ = window.jQuery;
+    var Materialize = window.Materialize;
 
     function Story(db) {
         this.db = db;
@@ -19,9 +20,9 @@
 
     Story.prototype.postAllStories = function(selector, allStories) {
         allStories.forEach(function(oneStory) {
-            $(selector).append(storyCard(oneStory))
+            $(selector).append(storyCard(oneStory));
         });
-
+        addSubmitLikeUnlikeHandler();
     };
 
     function storyCard(data) {
@@ -47,7 +48,9 @@
             'class': 'card-content'
         });
 
-        var $cardCelebrity = $('<h5></h5>');
+        var $cardCelebrity = $('<h5></h5>', {
+            'class': 'colorBlueviolet'
+        });
 
         var $cardDisc = $('<p></p>');
 
@@ -57,16 +60,20 @@
 
         var $pCardLastName = $('<p></p>');
 
-        var $pCardLocation = $('<p></p>');
+        var $pCardLocation = $('<p></p>', {
+            'class': 'colorDodgerblue'
+        });
 
-        var $pCardDate = $('<p></p>');
+        var $pCardDate = $('<p></p>', {
+            'class': 'colorCoral'
+        });
 
         var $divCardAction = $('<div></div>', {
             'class': 'card-action'
         });
 
         var $anchor = $('<a></a>', {
-            'class': 'orange-text text-lighten-3 left'
+            'class': 'text-lighten-3 left'
         });
 
         var $anchorIconUp = $('<a></a>');
@@ -76,13 +83,13 @@
         var $unlikeIcon = $('<i></i>', {
             'class': 'right material-icons',
             'data-unlike-up': 'click',
-            'documentId' : data.id
+            'documentId': data.id
         });
 
         var $likeIcon = $('<i></i>', {
             'class': 'right material-icons',
             'data-like-up': 'click',
-            'documentId' : data.id
+            'documentId': data.id
         });
 
         var $likeSpan = $('<span></span>', {
@@ -129,6 +136,42 @@
         return $divOuter;
 
     }
+
+    function addSubmitLikeUnlikeHandler() {
+        document.querySelectorAll('[data-like-up="click"]').forEach(function(oneIcon) {
+            $(oneIcon).on('click', function(event) {
+                event.preventDefault();
+                Materialize.toast('Liked', 2000);
+                window.remoteDS.get(oneIcon.getAttribute('documentid')).then(function(serverRes) {
+                    if (serverRes) {
+                        serverRes.storyLike = (Number(serverRes.storyLike) + 1).toString();
+                        window.remoteDS.remove(oneIcon.getAttribute('documentid')).then(function() {
+                            window.remoteDS.add(serverRes).then(function() {
+                                location.reload();
+                            });
+                        });
+                    }
+                });
+            });
+        });
+        document.querySelectorAll('[data-unlike-up="click"]').forEach(function(oneIcon) {
+            $(oneIcon).on('click', function(event) {
+                event.preventDefault();
+                Materialize.toast('Un Liked', 2000);
+                window.remoteDS.get(oneIcon.getAttribute('documentid')).then(function(serverRes) {
+                    if (serverRes) {
+                        serverRes.storyDislike = (Number(serverRes.storyDislike) + 1).toString();
+                        window.remoteDS.remove(oneIcon.getAttribute('documentid')).then(function() {
+                            window.remoteDS.add(serverRes).then(function() {
+                                location.reload();
+                            });
+                        });
+                    }
+                });
+            });
+        });
+    }
+
 
     App.Story = Story;
     window.App = App;

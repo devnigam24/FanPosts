@@ -20,6 +20,18 @@
 .cardImgHeight{
   height: 25em !important;
 }
+.overflowScrollable{
+  overflow: scroll !important;
+}
+.colorDodgerblue{
+  color: dodgerblue !important;
+}
+.colorCoral{
+  color: coral !important;
+}
+.colorBlueviolet{
+  color: blueviolet;
+}
 
 
 /* Custom Stylesheet */

@@ -10,11 +10,7 @@
         } else {
             this.$element = $(selector);
         }
-        if (this.$element.length === 0) {
-            //throw new Error('Could not find element with selector: ' + selector);
-        }
     }
-
 
     CelebCards.prototype.addCard = function(celebData) {
         this.$element.empty();
@@ -91,7 +87,8 @@
         $divCardImage.append($img);
 
         $divCardContent.append($spanCardTitle);
-        $divCardContent.append($pCardContent.append($anchor.append('Read Bio')));
+        $divCardContent
+            .append($pCardContent.append($anchor.append('Read Bio')));
 
         $divCardRevel.append($spanCardRevel);
         $divCardRevel.append($pCardRevel1.append(celebData.q));
