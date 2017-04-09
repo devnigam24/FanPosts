@@ -10,7 +10,7 @@
       "storyLike": "7",
       "storyDislike": "6",
       "postDate": "2017-04-03T16:18:28-08:00",
-      "PostedSnapURL": "http://res.cloudinary.com/cpsc473/image/upload/c_limit,h_60,w_90/v1491261532/uszy7bekofyeqzppgp6g.jpg",
+      "PostedSnapURL": "http://res.cloudinary.com/cpsc473/image/upload/q_90/v1491773344/bu44fb9m4bj6icuofups.png",
       "id": "r1xtLPx6l"
     },
     {
@@ -23,7 +23,7 @@
       "storyLike": "2",
       "storyDislike": "1",
       "postDate": "2017-04-03T16:42:09-08:00",
-      "PostedSnapURL": "http://res.cloudinary.com/cpsc473/image/upload/c_limit,h_60,w_90/v1491263017/vf9zqbkmcplgcth35fnz.jpg",
+      "PostedSnapURL": "http://res.cloudinary.com/cpsc473/image/upload/q_90/v1491773409/lzzyfzwzlcshzq1xh6iw.jpg",
       "id": "BkxIhweax"
     },
     {
@@ -36,8 +36,21 @@
       "storyLike": "9",
       "storyDislike": "19",
       "postDate": "2017-04-03T15:30:05-07:00",
-      "PostedSnapURL": "http://res.cloudinary.com/cpsc473/image/upload/c_limit,h_60,w_90/v1491258628/lhbinz92np28aohrutm5.jpg",
+      "PostedSnapURL": "http://res.cloudinary.com/cpsc473/image/upload/q_90/v1491773300/gy4x9v8dd9l3fcfevtyd.jpg",
       "id": "rJrQTBl6g"
+    },
+    {
+      "firstName": "Random",
+      "lastName": "Random",
+      "emailAddress": "Random@Random.com",
+      "location": "HJC Helmets, South Harbor Boulevard, La Habra, CA, United States",
+      "celebrityName": "Random",
+      "description": "Random",
+      "storyLike": "1",
+      "storyDislike": "0",
+      "postDate": "2017-04-09T14:24:03-07:00",
+      "PostedSnapURL": "http://res.cloudinary.com/cpsc473/image/upload/q_90/v1491773074/wmzonnabnymloylycism.jpg",
+      "id": "BJeiUQOpx"
     }
   ]
 }

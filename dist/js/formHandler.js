@@ -34,8 +34,11 @@
                 theme: 'minimal'
             }, function(error, result) {
                 if (null != result || undefined != result) {
-                    window.thumbnailUrl = result[0].thumbnail_url;
-                    $('#imgPreview').attr('src', result[0].thumbnail_url);
+                    var uri_enc = encodeURIComponent(result[0].thumbnail_url);
+                    var tempUri = uri_enc.replace('c_limit%2Ch_60%2Cw_90', 'q_90');
+                    var uri_dec = decodeURIComponent(tempUri);
+                    window.thumbnailUrl = uri_dec;
+                    $('#imgPreview').attr('src', uri_dec);
                 }
             });
         });
