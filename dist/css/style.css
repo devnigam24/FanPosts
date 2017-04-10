@@ -55,3 +55,7 @@ form :focus:required:invalid {
 #celebImage {
     color: white;
 }
+
+.parallax img{
+    display : block;
+}
